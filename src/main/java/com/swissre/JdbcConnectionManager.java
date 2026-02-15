@@ -3,9 +3,13 @@ package com.swissre;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JdbcConnectionManager {
 
+    private static final Logger logger = LoggerFactory.getLogger(JdbcConnectionManager.class);
+    
     private String url;
     private String username;
     private String password;
@@ -25,7 +29,7 @@ public class JdbcConnectionManager {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.err.println("Error closing connection: " + e.getMessage());
+                logger.error("Error closing connection: {}", e.getMessage(), e);
             }
         }
     }
