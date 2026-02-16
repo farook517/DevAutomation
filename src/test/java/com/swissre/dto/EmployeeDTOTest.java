@@ -93,6 +93,7 @@ class EmployeeDTOTest {
         assertTrue(result.contains("email='john.doe@example.com'"));
         assertTrue(result.contains("department='Engineering'"));
         assertTrue(result.contains("position='Software Engineer'"));
+        assertTrue(result.contains("hireDate=2020-01-15"));
         assertTrue(result.contains("salary=75000.0"));
     }
 
